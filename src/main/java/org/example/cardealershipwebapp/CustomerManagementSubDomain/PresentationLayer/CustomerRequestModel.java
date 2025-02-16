@@ -15,4 +15,6 @@ public class CustomerRequestModel {
     private String username;
     private String password1;
     private String password2;
+    private String type;
+    private String number;
 }

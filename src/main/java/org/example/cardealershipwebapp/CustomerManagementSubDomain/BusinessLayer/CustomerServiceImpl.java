@@ -11,7 +11,6 @@ import org.example.cardealershipwebapp.Utils.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -32,13 +31,11 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<CustomerResponseModel> getCustomers() {
         List<Customer> customers = this.customerRepository.findAll();
+
 //        List<CustomerResponseModel> customerResponseModels =
-//                this.customerResponseMapper.entityListToResponseModelList(customers);
+//                fromEntityListToModelList(customers);
 
-        List<CustomerResponseModel> customerResponseModels =
-                fromEntityListToModelList(customers);
-
-        return customerResponseModels;
+        return this.customerResponseMapper.entityListToResponseModelList(customers);
     }
 
     @Override
@@ -134,27 +131,27 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     // Helper methods
-    public CustomerResponseModel fromEntityToModel(Customer customer) {
-        CustomerResponseModel customerResponseModel =
-                new CustomerResponseModel();
-        customerResponseModel.setFirstName(customer.getFirstName());
-        customerResponseModel.setLastName(customer.getLastName());
-
-        return customerResponseModel;
-    }
-
-    public List<CustomerResponseModel> fromEntityListToModelList(
-            List<Customer> customers) {
-
-        List<CustomerResponseModel> customerResponseModels =
-                new ArrayList<>();
-        for (Customer c : customers) {
-            customerResponseModels.add(fromEntityToModel(c));
-        }
-
-
-        return customerResponseModels;
-    }
+//    public CustomerResponseModel fromEntityToModel(Customer customer) {
+//        CustomerResponseModel customerResponseModel =
+//                new CustomerResponseModel();
+//        customerResponseModel.setFirstName(customer.getFirstName());
+//        customerResponseModel.setLastName(customer.getLastName());
+//
+//        return customerResponseModel;
+//    }
+//
+//    public List<CustomerResponseModel> fromEntityListToModelList(
+//            List<Customer> customers) {
+//
+//        List<CustomerResponseModel> customerResponseModels =
+//                new ArrayList<>();
+//        for (Customer c : customers) {
+//            customerResponseModels.add(fromEntityToModel(c));
+//        }
+//
+//
+//        return customerResponseModels;
+//    }
 
 }
 

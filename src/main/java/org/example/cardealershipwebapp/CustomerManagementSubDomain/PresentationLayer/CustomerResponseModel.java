@@ -13,4 +13,9 @@ public class CustomerResponseModel {
     private String postalCode;
     private String city;
     private String province;
+
+    private String phoneType;
+    private String phoneNumber;
+
+
 }

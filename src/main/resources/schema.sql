@@ -51,7 +51,13 @@ CREATE TABLE IF NOT EXISTS customers
     password VARCHAR
 (
     50
+),
+    phone_number VARCHAR
+(
+    50
+),
+    phone_type VARCHAR
+(
+    50
 )
     );
-
-

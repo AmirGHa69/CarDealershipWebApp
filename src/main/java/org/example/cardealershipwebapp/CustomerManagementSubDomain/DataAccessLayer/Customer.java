@@ -25,10 +25,10 @@ public class Customer {
     private String firstName;
     private String emailAddress;
 
-    private String streetAddress;
-    private String postalCode;
-    private String city;
-    private String province;
+    @Embedded
+    private Address address;
+    @Embedded
+    private PhoneNumber phoneNumber;
 
     private String username;
     private String password;
